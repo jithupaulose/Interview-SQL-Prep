@@ -1,0 +1,32 @@
+idth oru kidullan question aanau
+logic super aayi plan cheyyanam
+
+evde daily apple and orange ntae count difference aaa vendae.
+group by cheythal daily date varum
+steps
+
+group by cheythal daily date varum.
+SUM vech CASE statement idanam
+apple aaneghl soldnum
+orange anneghil - soldnum 
+so numukk differnce kittulloo
+
+
+
+SELECT sale_date,
+SUM(
+    (CASE 
+        WHEN fruit = 'apples' THEN sold_num
+        WHEN fruit = 'oranges' THEN -sold_num end)       
+) as diff   
+
+FROM Sales 
+GROUP BY sale_date
+
+
+CASE maati if vechum cheyyam
+
+select s.sale_date,
+    sum(if(s.fruit = 'apples', s.sold_num, -s.sold_num)) as diff
+from Sales s
+group by s.sale_date
