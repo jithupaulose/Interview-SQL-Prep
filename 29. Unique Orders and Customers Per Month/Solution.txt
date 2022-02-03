@@ -1,0 +1,32 @@
+
+SELECT SUBSTRING(order_date,1,7 ) AS month,
+
+COUNT(invoice ) AS order_count,
+
+COUNT( DISTINCT customer_id ) AS customer_count 
+
+FROM Orders 
+WHERE invoice > 20
+GROUP BY 1
+
+
+SELECT LEFT(order_date,7 ) AS month,
+
+COUNT(invoice ) AS order_count,
+
+COUNT( DISTINCT customer_id ) AS customer_count 
+
+FROM Orders 
+WHERE invoice > 20
+GROUP BY 1
+
+
+SELECT date_format(order_date,'%Y-%m' ) AS month,
+
+COUNT(invoice ) AS order_count,
+
+COUNT( DISTINCT customer_id ) AS customer_count 
+
+FROM Orders 
+WHERE invoice > 20
+GROUP BY 1
