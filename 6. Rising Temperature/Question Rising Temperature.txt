@@ -1,4 +1,4 @@
-SQL Schema
+SQL Schema below:
 Table: Weather
 
 +---------------+---------+
